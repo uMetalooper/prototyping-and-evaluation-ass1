@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement;
 
 
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -34,6 +35,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            this.GetComponent<Renderer>().enabled = false;
+            this.GetComponent<Explode>().enabled = true;
+        }
         dist = 0.5f;
         dir = new Vector3(0, -1, 0);
 
@@ -192,4 +199,7 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
         rigidBody.velocity = movement;
     }
+
+    //explode test
+
 }

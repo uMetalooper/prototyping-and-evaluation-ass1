@@ -25,7 +25,8 @@ public class Explode : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     void CreateCube(Vector3 coordinates) {
