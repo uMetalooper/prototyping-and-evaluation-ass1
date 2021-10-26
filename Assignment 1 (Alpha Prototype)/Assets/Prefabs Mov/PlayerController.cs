@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public float health = 10f;
     public float speed = 5f;
     public float rotationSpeed = 10f;
     public static float distance;
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 dir;
     private Vector3 movement;
 
+    public Slider HealthSlider;
+
 
 
     private void Start()
@@ -35,12 +39,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.H))
         {
+            health -= 1;
+        }
+        HealthSlider.value = health;
+        HealthSlider.maxValue = 10.0f;
+
+        if(block == null)
+        {
+            block = GameObject.FindGameObjectWithTag("Block");
+        }
+        if (Input.GetKeyDown(KeyCode.I) || health < 0)
+        {
+            health = 0;
             this.GetComponent<Renderer>().enabled = false;
             this.GetComponent<Explode>().enabled = true;
+            this.GetComponent<Explode>().Invoke("Main", 0);
+            rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
+
+
         dist = 0.5f;
         dir = new Vector3(0, -1, 0);
 
@@ -199,7 +218,5 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
         rigidBody.velocity = movement;
     }
-
-    //explode test
 
 }

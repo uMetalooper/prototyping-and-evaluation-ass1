@@ -2,31 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject Cam;
     Transform Playerpos;
     public Vector3 Playerpos2;
     public GameObject UI;
     public GameObject Deathscreeen1;
     public GameObject Deathscreeen2;
 
-    public bool fire;
-    public bool ice;
-    bool changing = false;
+    PlayerInv inv;
+
+    //UI
+    public Text elapsedTimeDisplay;
+    public Slider Progress;
+    float elapsedtime;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject world = GameObject.FindGameObjectWithTag("WorldManager");
+        if (world && world != this.gameObject)
+        {
+            //gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(inv == null)
+        {
+            inv = player.GetComponent<PlayerInv>();
+        }
+        elapsedtime += Time.deltaTime;
+
+        elapsedTimeDisplay.text = Mathf.FloorToInt(elapsedtime / 60).ToString("00") + ":" + Mathf.FloorToInt(elapsedtime % 60).ToString("00");
+
        // Debug.Log("pos" + Playerpos2);
-        //Debug.Log("active scene" + SceneManager.GetActiveScene().name);
+       //Debug.Log("active scene" + SceneManager.GetActiveScene().name);
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -34,71 +53,89 @@ public class WorldManager : MonoBehaviour
         else
         {
 
-            if(player.GetComponent<PlayerMov>().isdead)
+            if(player.GetComponent<PlayerController>().health < 1)
             {
-                changing = true;
-                if (SceneManager.GetActiveScene().name == "EnvironmentUI")
+                //changing = true;
+                if (SceneManager.GetActiveScene().name == "Fire" || SceneManager.GetActiveScene().name == "Alpha_Prototype")
                 {
-                    Deathscreeen1.SetActive(true);
-                    UI.SetActive(false);
                     StartCoroutine(World2());
 
+                   
                 }
-                else
+                else if (SceneManager.GetActiveScene().name == "Ice")
                 {
-                    Deathscreeen2.SetActive(true);
-                    UI.SetActive(false);
                     StartCoroutine(World1());
+
                 }
-                //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
             }
         }
 
-        if (changing == false)
-        {
+
             Playerpos = player.transform;
             Playerpos2 = player.transform.position;
+
+        if(inv.CP1)
+        {
+            Progress.value = 25f;
+        }
+        if(inv.CP1 && inv.CP2)
+        {
+            Progress.value = 50f;
+        }
+        if (inv.CP1 && inv.CP2 && inv.CP3)
+        {
+            Progress.value = 75f;
+        }
+        if (inv.CP1 && inv.CP2 && inv.CP3 && inv.CP4)
+        {
+            Progress.value = 100f;
         }
     }
 
 
     IEnumerator World2()
     {
+        player.GetComponent<PlayerController>().health = 10;
+        yield return new WaitForSeconds(2);
+        Deathscreeen1.SetActive(true);
         Debug.Log("Has run");
-        player.GetComponent<PlayerMov>().isdead = false;
         yield return new WaitForSeconds(3);
-        player.GetComponent<PlayerMov>().isdead = false;
-        SceneManager.LoadScene("EnvironmentUI 1");
-        player = GameObject.FindGameObjectWithTag("Player");
-        ice = true;
-        fire = false;
+        SceneManager.LoadScene("Ice");
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
-        //yield return new WaitForSeconds(2);
-        player.transform.position = new Vector3(Playerpos2.x, Playerpos2.y + 5, Playerpos2.z);
+        DontDestroyOnLoad(Cam);
+        DontDestroyOnLoad(player);
+        player.GetComponent<Renderer>().enabled = true;
         Deathscreeen1.SetActive(false);
-        UI.SetActive(true);
-        changing = false;
-        StopAllCoroutines();
-        
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        StopAllCoroutines(); //can change to timer later if it messes with others
+
     }
 
     IEnumerator World1()
     {
+        player.GetComponent<PlayerController>().health = 10;
+        yield return new WaitForSeconds(2);
+        Deathscreeen2.SetActive(true);
         Debug.Log("Has run");
-        player.GetComponent<PlayerMov>().isdead = false;
         yield return new WaitForSeconds(3);
-        player.GetComponent<PlayerMov>().isdead = false;
-        SceneManager.LoadScene("EnvironmentUI");
-        player = GameObject.FindGameObjectWithTag("Player");
-        fire = true;
-        ice = false;
+        SceneManager.LoadScene("Fire");
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
-        //yield return new WaitForSeconds(2);
-        player.transform.position = new Vector3(Playerpos2.x, Playerpos2.y + 5, Playerpos2.z);
+        DontDestroyOnLoad(Cam);
+        DontDestroyOnLoad(player);
+        player.GetComponent<Renderer>().enabled = true;
         Deathscreeen2.SetActive(false);
-        UI.SetActive(true);
-        changing = false;
-        StopAllCoroutines();
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        StopAllCoroutines(); //can change to timer later if it messes with others
+
+
 
     }
+
+
+
+    //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 }

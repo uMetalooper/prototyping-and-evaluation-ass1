@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9006417738194068905}
   m_Layer: 0
   m_Name: key_gold
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 9006417737627669029}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
   m_LocalPosition: {x: 10.7, y: 0.5, z: -1.0556583}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 9006417737627933637}
   m_Father: {fileID: 0}

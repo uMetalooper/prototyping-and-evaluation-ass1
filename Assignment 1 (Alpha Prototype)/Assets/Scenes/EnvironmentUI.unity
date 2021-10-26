@@ -1937,7 +1937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588378759}
-  m_LocalRotation: {x: 0.13458684, y: -0.000000019059403, z: 0.0000000025886973, w: 0.9909018}
+  m_LocalRotation: {x: 0.13458684, y: 0.000000019062291, z: -0.0000000025890896, w: 0.9909018}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2133,7 +2133,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660319075}
-  m_LocalRotation: {x: 0.14966948, y: -0.0013780084, z: 0.00020201523, w: 0.9887351}
+  m_LocalRotation: {x: 0.14966948, y: -0.0013783156, z: 0.0002020602, w: 0.9887351}
   m_LocalPosition: {x: 0, y: 6.7315636, z: -16.907827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2374,11 +2374,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1367561269}
+  Playerpos2: {x: 0, y: 0, z: 0}
   UI: {fileID: 139066115}
   Deathscreeen1: {fileID: 6749033124247239992}
   Deathscreeen2: {fileID: 849867682}
-  fire: 1
-  ice: 0
 --- !u!4 &728126574
 Transform:
   m_ObjectHideFlags: 0
@@ -3782,7 +3781,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063190300}
-  m_LocalRotation: {x: 0.14735143, y: -0.0015305637, z: 0.00022802012, w: 0.989083}
+  m_LocalRotation: {x: 0.14735143, y: -0.0015309047, z: 0.00022807089, w: 0.989083}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4612,7 +4611,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207554479}
-  m_LocalRotation: {x: 0.17049246, y: -0.00000002572822, z: 0.000000004451644, w: 0.985359}
+  m_LocalRotation: {x: 0.17049246, y: -0.000000025728216, z: 0.0000000044516435, w: 0.985359}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5687,6 +5686,7 @@ MonoBehaviour:
   speed: 6
   jumpHeight: 4
   grounddistnce: 0.4
+  health: 2
   isdead: 0
   smoothing: 0.1
   gravity: -9.8

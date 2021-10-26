@@ -9,12 +9,15 @@ public class SliderValuePass : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		progress = GetComponent<Text>();
+		progress = gameObject.GetComponent<Text>();
 
 	}
 	
 	public  void UpdateProgress (float content) {
-		progress.text = Mathf.Round( content*100) +"%";
+		if (progress != null)
+		{
+			progress.text = Mathf.Round(content * 100) + "%";
+		}
 	}
 
 

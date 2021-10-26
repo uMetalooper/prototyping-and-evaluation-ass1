@@ -9,28 +9,35 @@ public class SliderRunTo1 : MonoBehaviour
 	 public Slider slider;
 	 public float speed=0.5f;
 
-  float time =0f;
+	  float time =0f;
   
-  void Start()
-  {
+	  void Start()
+	  {
 	  
-	slider = GetComponent<Slider>();
-  }
+		slider = gameObject.GetComponent<Slider>();
+	  }
   
-    void Update()
-    {
-		if(b)
+		void Update()
 		{
-			time+=Time.deltaTime*speed;
-			slider.value = time;
-			
-        if(time>1)
-		{
-                    b = false;
-			time=0;
+			if(slider != null)
+			{
+				if (b)
+				{
+					time += Time.deltaTime * speed;
+					slider.value = time;
+
+					if (time > 1)
+					{
+						b = false;
+						time = 0;
+					}
+				}
+			}
+			else
+			{
+				slider = gameObject.GetComponent<Slider>();
+			}
 		}
-    }
-	}
 	
 	
 }

@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - WorldManager
+  - Block
+  - Key
+  - Goal
+  - CK1
+  - CK2
+  - CK3
+  - CK4
   layers:
   - Default
   - TransparentFX

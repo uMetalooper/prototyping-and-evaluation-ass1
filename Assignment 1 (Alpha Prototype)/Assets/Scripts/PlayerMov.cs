@@ -15,6 +15,7 @@ public class PlayerMov : MonoBehaviour
     public float speed = 6f;
     public float jumpHeight = 4f;
     public float grounddistnce;
+    public float health = 1;
 
     bool isgrounded;
     public bool isdead = false;
@@ -27,7 +28,8 @@ public class PlayerMov : MonoBehaviour
     public float gravity = -9.8f;
 
     // Update is called once per frame
-    private void Start()
+
+    private void Awake()
     {
         transform.position = GameObject.FindGameObjectWithTag("WorldManager").GetComponent<WorldManager>().Playerpos2;
     }
@@ -67,8 +69,7 @@ public class PlayerMov : MonoBehaviour
         if(Input.GetKey(KeyCode.K))
         {
             Debug.Log("K");
-            isdead = true;
-            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
+            health = 0;
         }
     }
 }

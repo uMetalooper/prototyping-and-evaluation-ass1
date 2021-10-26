@@ -12,7 +12,7 @@ public class Explode : MonoBehaviour
     void Start()
     {
         //Invoke("Main", delay);
-        Main();
+        //Main();
     }
 
     void Main()
