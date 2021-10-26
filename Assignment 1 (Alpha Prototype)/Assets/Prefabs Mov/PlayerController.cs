@@ -78,26 +78,16 @@ public class PlayerController : MonoBehaviour
                 speed = 5f;
             }
 
-            else
-            {
-                isGrounded = false;
-            }
-
             //Endpoint
-            if (Physics.Raycast(endpoint, dir, dist))
+            else if (Physics.Raycast(endpoint, dir, dist))
             {
                 rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
                 isGrounded = true;
                 speed = 5f;
             }
 
-            else
-            {
-                isGrounded = false;
-            }
-
             //Startpoint
-            if (Physics.Raycast(startpoint, dir, dist))
+            else if (Physics.Raycast(startpoint, dir, dist))
             {
                 rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
                 isGrounded = true;
@@ -164,11 +154,13 @@ public class PlayerController : MonoBehaviour
                 block = hit.transform.gameObject;
                 block.AddComponent<FixedJoint>();
                 block.GetComponent<FixedJoint>().connectedBody = this.GetComponent<Rigidbody>();
+                block.GetComponent<Rigidbody>().mass = 10;
             }
 
             if(Input.GetKeyUp(KeyCode.G))
             {
                 Destroy(block.GetComponent<FixedJoint>());
+                 block.GetComponent<Rigidbody>().mass = 1000000;
             }
         }
     }
