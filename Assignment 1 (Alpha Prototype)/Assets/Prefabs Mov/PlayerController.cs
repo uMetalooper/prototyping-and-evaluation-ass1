@@ -205,9 +205,49 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
+        float moveHorizontal;
+        float moveVertical;
+
+        if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
+        {
+            moveHorizontal = Input.GetAxis("Horizontal");
+        }
+
+        else
+        {
+            moveHorizontal = Input.GetAxis("Vertical");
+        }
+
+        if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
+        {
+            moveVertical = Input.GetAxis("Vertical");
+        }
+
+        else
+        {
+            moveVertical = Input.GetAxis("Horizontal");
+        }
+
+        if (this.transform.eulerAngles.y == 0)
+        {
+            movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
+        }
+
+        else if (this.transform.eulerAngles.y == 90)
+        {
+            movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
+        }
+
+        else if (this.transform.eulerAngles.y == 270)
+        {
+            movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
+        }
+
+        else 
+        {
+            movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
+        }
+
         rigidBody.velocity = movement;
     }
 
