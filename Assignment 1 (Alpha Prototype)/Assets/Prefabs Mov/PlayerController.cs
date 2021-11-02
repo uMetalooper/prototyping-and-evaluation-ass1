@@ -163,15 +163,18 @@ public class PlayerController : MonoBehaviour
             transform.position = transform.position + new Vector3(0, (0 - transform.position.y), 0);
         }
 
-        //Camera rotation
-        if (Input.GetKeyDown(KeyCode.Q) && !rotating)
+        if (!isGrabbing)
         {
-            StartCoroutine(RotateLeft());
-        }
+            //Camera rotation
+            if (Input.GetKeyDown(KeyCode.Q) && !rotating)
+            {
+                StartCoroutine(RotateLeft());
+            }
 
-        if (Input.GetKeyDown(KeyCode.E) && !rotating)
-        {
-            StartCoroutine(RotateRight());
+            if (Input.GetKeyDown(KeyCode.E) && !rotating)
+            {
+                StartCoroutine(RotateRight());
+            }
         }
 
         //Correct rotation if necessary - if an angle goes above or below the desired 90 degree rotation
