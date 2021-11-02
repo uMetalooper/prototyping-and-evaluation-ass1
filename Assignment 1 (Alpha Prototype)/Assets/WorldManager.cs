@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class WorldManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject Cam;
+    //public GameObject Cam;
     Transform Playerpos;
     public Vector3 Playerpos2;
     public GameObject UI;
@@ -15,13 +15,32 @@ public class WorldManager : MonoBehaviour
     public GameObject Deathscreeen2;
 
     PlayerInv inv;
+    //public Material dissolveMatt;
 
     //UI
     public Text elapsedTimeDisplay;
     public Slider Progress;
+    //reset slider for death loading screen
+    public Slider Deathscreeen1prog;
+    public Slider Deathscreeen2prog;
     float elapsedtime;
+    
 
+    private static WorldManager managerinst;
 
+    void Awake()
+    {
+        DontDestroyOnLoad (this);
+
+        if(managerinst == null)
+        {
+            managerinst = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -102,13 +121,15 @@ public class WorldManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Ice");
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
-        DontDestroyOnLoad(Cam);
+        //DontDestroyOnLoad(Cam);
         DontDestroyOnLoad(player);
         player.GetComponent<Renderer>().enabled = true;
         Deathscreeen1.SetActive(false);
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        Deathscreeen1prog.value = 0;
+        //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         StopAllCoroutines(); //can change to timer later if it messes with others
 
     }
@@ -122,13 +143,15 @@ public class WorldManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Fire");
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
-        DontDestroyOnLoad(Cam);
+        //DontDestroyOnLoad(Cam);
         DontDestroyOnLoad(player);
         player.GetComponent<Renderer>().enabled = true;
         Deathscreeen2.SetActive(false);
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        Deathscreeen2prog.value = 0;
+        //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         StopAllCoroutines(); //can change to timer later if it messes with others
 
 

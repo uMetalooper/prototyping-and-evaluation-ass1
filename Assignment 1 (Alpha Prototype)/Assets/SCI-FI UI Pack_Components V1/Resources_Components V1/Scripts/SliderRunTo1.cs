@@ -9,7 +9,10 @@ public class SliderRunTo1 : MonoBehaviour
 	 public Slider slider;
 	 public float speed=0.5f;
 
+	 public GameObject parent;
+
 	  float time =0f;
+	  float timer = 1f;
   
 	  void Start()
 	  {
@@ -19,6 +22,7 @@ public class SliderRunTo1 : MonoBehaviour
   
 		void Update()
 		{
+
 			if(slider != null)
 			{
 				if (b)
@@ -32,10 +36,21 @@ public class SliderRunTo1 : MonoBehaviour
 						time = 0;
 					}
 				}
+
 			}
 			else
 			{
 				slider = gameObject.GetComponent<Slider>();
+			}
+
+			if(!b)
+			{
+				timer -= Time.deltaTime;
+				if(timer < 0)
+				{ 
+					b = true;
+					timer = 1f;
+				}
 			}
 		}
 	

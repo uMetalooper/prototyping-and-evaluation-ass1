@@ -1,8 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,11 +29,30 @@ public class PlayerController : MonoBehaviour
     private RaycastHit hit;
     private Vector3 dir;
     private Vector3 movement;
+    
 
     public Slider HealthSlider;
+    public Material dissolveMatt;
 
+    float DissolveTime = 0f;
+    float DissolveWaitTime = 1.0f;
+    float DissolveOutWaitTime = 2f;
 
+    private static PlayerController playerinst;
 
+    void Awake()
+    {
+        DontDestroyOnLoad (this);
+
+        if(playerinst == null)
+        {
+            playerinst = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -39,6 +61,43 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+
+        if(this.GetComponent<Renderer>().enabled == true)
+        {
+            if(DissolveWaitTime > 0 )
+            {
+                DissolveWaitTime -= Time.deltaTime;
+                
+            }
+            else{
+
+                if(DissolveTime < 2.2)
+                {
+                    DissolveTime += Time.deltaTime;
+                    dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
+                    this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
+                    DissolveOutWaitTime = 2f;
+                }
+            }
+        }
+        else
+        {
+            if(DissolveOutWaitTime > 0)
+            {
+                DissolveOutWaitTime -=Time.deltaTime;
+            }
+            else
+            {
+                DissolveTime = 0f;
+                DissolveWaitTime = 1.0f;
+                dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
+                this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
+            }
+        }
+
+        //Debug.Log("Dissolvetime alpha " + DissolveTime/2);
+
         if(Input.GetKeyDown(KeyCode.H))
         {
             health -= 1;
@@ -52,8 +111,9 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I) || health < 0)
         {
+            //rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
             health = 0;
-            this.GetComponent<Renderer>().enabled = false;
+            //this.GetComponent<Renderer>().enabled = false;
             this.GetComponent<Explode>().enabled = true;
             this.GetComponent<Explode>().Invoke("Main", 0);
             rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
@@ -250,5 +310,9 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.velocity = movement;
     }
+
+
+
+    
 
 }
