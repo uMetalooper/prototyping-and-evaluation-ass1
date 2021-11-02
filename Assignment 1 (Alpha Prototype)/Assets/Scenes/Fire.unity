@@ -8795,5 +8795,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block
       objectReference: {fileID: 0}
+    - target: {fileID: 7617845867511951543, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
+      propertyPath: m_Mass
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5df634612e5dc478d9330723acb859, type: 3}

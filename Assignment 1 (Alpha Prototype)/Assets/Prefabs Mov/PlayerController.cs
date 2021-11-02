@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     float DissolveOutWaitTime = 2f;
     bool dissolveStart = false;
     public bool isDead = false;
-    public bool isActive = false;
+    public bool isGrabbing = false;
 
     private static PlayerController playerinst;
 
@@ -98,39 +98,38 @@ public class PlayerController : MonoBehaviour
             
         }
 
-
         dist = 0.5f;
         dir = new Vector3(0, -1, 0);
 
         Vector3 endpoint = transform.position + new Vector3(1, 0, 0);
         Vector3 startpoint = transform.position + new Vector3(-1, 0, 0);
 
+        //Z Axis
+        Vector3 endpointZOffset = transform.position + new Vector3(0, 0, 1);
+        Vector3 startpointZOffset = transform.position + new Vector3(0, 0, -1);
+
+        //Corners
+        Vector3 endpointCorn = transform.position + new Vector3(1, 0, 1);
+        Vector3 startpointCorn = transform.position + new Vector3(-1, 0, -1);
+        Vector3 endpointCorn2 = transform.position + new Vector3(1, 0, -1);
+        Vector3 startpointCorn2 = transform.position + new Vector3(1, 0, -1);
+
+
         groundedTimer += Time.deltaTime;
 
         //Position
         if (!isGrounded && groundedTimer >= 0.2f)
         {
-            if (Physics.Raycast(transform.position, dir, dist))
+            if (Physics.Raycast(transform.position, dir, dist)
+                || (Physics.Raycast(endpoint, dir, dist) || Physics.Raycast(endpointZOffset, dir, dist)) 
+                || (Physics.Raycast(startpoint, dir, dist) || Physics.Raycast(startpointZOffset, dir, dist))
+                || (Physics.Raycast(startpointCorn, dir, dist) || Physics.Raycast(startpointCorn2, dir, dist))
+                || (Physics.Raycast(endpointCorn, dir, dist) || Physics.Raycast(endpointCorn2, dir, dist)))
             {
                 rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
                 isGrounded = true;
                 speed = 5f;
-            }
-
-            //Endpoint
-            else if (Physics.Raycast(endpoint, dir, dist))
-            {
-                rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
-                isGrounded = true;
-                speed = 5f;
-            }
-
-            //Startpoint
-            else if (Physics.Raycast(startpoint, dir, dist))
-            {
-                rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
-                isGrounded = true;
-                speed = 5f;
+                groundedTimer = 0;
             }
 
             else
@@ -188,18 +187,21 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, grabDist, blockMask))
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.G) && !isGrabbing)
             {
                 block = hit.transform.gameObject;
                 block.AddComponent<FixedJoint>();
                 block.GetComponent<FixedJoint>().connectedBody = this.GetComponent<Rigidbody>();
                 block.GetComponent<Rigidbody>().mass = 10;
+                isGrabbing = true;
             }
 
-            if(Input.GetKeyUp(KeyCode.G))
+            //if(Input.GetKeyUp(KeyCode.G))
+            else if (Input.GetKeyDown(KeyCode.G) && isGrabbing)
             {
                 Destroy(block.GetComponent<FixedJoint>());
-                 block.GetComponent<Rigidbody>().mass = 1000000;
+                block.GetComponent<Rigidbody>().mass = 1000000;
+                isGrabbing = false;
             }
         }
     }
@@ -244,28 +246,29 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal;
-        float moveVertical;
+        float moveHorizontal = 0;
+        float moveVertical = 0;
+
         if (!isDead)
         {
             if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
             {
-                moveHorizontal = Input.GetAxis("Horizontal");
-            }
+                if (!isGrabbing)
+                {
+                    moveHorizontal = Input.GetAxis("Horizontal");
+                }
 
-            else
-            {
-                moveHorizontal = Input.GetAxis("Vertical");
-            }
-
-            if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
-            {
                 moveVertical = Input.GetAxis("Vertical");
             }
 
             else
             {
-                moveVertical = Input.GetAxis("Horizontal");
+                moveHorizontal = Input.GetAxis("Vertical");
+
+                if (!isGrabbing)
+                {
+                    moveVertical = Input.GetAxis("Horizontal");
+                }
             }
 
             if (this.transform.eulerAngles.y == 0)
