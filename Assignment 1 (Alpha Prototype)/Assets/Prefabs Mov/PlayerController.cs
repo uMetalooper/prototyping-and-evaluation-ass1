@@ -312,6 +312,7 @@ public class PlayerController : MonoBehaviour
                     if (DissolveTime >= 2.0f)
                     {
                         isDead = false;
+                        //this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
                     }
 
 

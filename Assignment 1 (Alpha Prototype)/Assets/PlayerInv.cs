@@ -17,6 +17,7 @@ public class PlayerInv : MonoBehaviour
 
 
     public Image Invslots;
+    public Image Invslots2;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,12 @@ public class PlayerInv : MonoBehaviour
         if (other.gameObject.tag == "Key")
         {
             Invslots.enabled = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "PickUpB")
+        {
+            Invslots2.enabled = true;
             Destroy(other.gameObject);
         }
 

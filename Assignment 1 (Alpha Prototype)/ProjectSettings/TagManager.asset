@@ -12,6 +12,7 @@ TagManager:
   - CK2
   - CK3
   - CK4
+  - PickUpB
   layers:
   - Default
   - TransparentFX
