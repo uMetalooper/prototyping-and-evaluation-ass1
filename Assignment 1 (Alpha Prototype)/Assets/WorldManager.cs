@@ -128,8 +128,9 @@ public class WorldManager : MonoBehaviour
         Deathscreeen1prog.value = 0;
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        //player.GetComponent<PlayerController>().isDead = false;
         StopAllCoroutines(); //can change to timer later if it messes with others
 
     }
@@ -150,8 +151,9 @@ public class WorldManager : MonoBehaviour
         Deathscreeen2prog.value = 0;
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        //player.GetComponent<PlayerController>().isDead = false;
         StopAllCoroutines(); //can change to timer later if it messes with others
 
 

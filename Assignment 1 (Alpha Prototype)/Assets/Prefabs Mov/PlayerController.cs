@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     float DissolveTime = 0f;
     float DissolveWaitTime = 1.0f;
     float DissolveOutWaitTime = 2f;
+    bool dissolveStart = false;
+    public bool isDead = false;
+    public bool isActive = false;
 
     private static PlayerController playerinst;
 
@@ -61,39 +64,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
-
-        if(this.GetComponent<Renderer>().enabled == true)
+        Debug.Log("isDead: " + isDead);
+        if (dissolveStart)
         {
-            if(DissolveWaitTime > 0 )
-            {
-                DissolveWaitTime -= Time.deltaTime;
-                
-            }
-            else{
-
-                if(DissolveTime < 2.2)
-                {
-                    DissolveTime += Time.deltaTime;
-                    dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
-                    this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
-                    DissolveOutWaitTime = 2f;
-                }
-            }
-        }
-        else
-        {
-            if(DissolveOutWaitTime > 0)
-            {
-                DissolveOutWaitTime -=Time.deltaTime;
-            }
-            else
-            {
-                DissolveTime = 0f;
-                DissolveWaitTime = 1.0f;
-                dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
-                this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
-            }
+            Dissolves();
         }
 
         //Debug.Log("Dissolvetime alpha " + DissolveTime/2);
@@ -111,12 +85,17 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I) || health < 0)
         {
+            rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+            rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            dissolveStart = true;
+            isDead = true;
             //rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
             health = 0;
             //this.GetComponent<Renderer>().enabled = false;
             this.GetComponent<Explode>().enabled = true;
             this.GetComponent<Explode>().Invoke("Main", 0);
-            rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            
+            
         }
 
 
@@ -267,52 +246,92 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal;
         float moveVertical;
-
-        if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
+        if (!isDead)
         {
-            moveHorizontal = Input.GetAxis("Horizontal");
-        }
+            if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
+            {
+                moveHorizontal = Input.GetAxis("Horizontal");
+            }
 
-        else
-        {
-            moveHorizontal = Input.GetAxis("Vertical");
-        }
+            else
+            {
+                moveHorizontal = Input.GetAxis("Vertical");
+            }
 
-        if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
-        {
-            moveVertical = Input.GetAxis("Vertical");
-        }
+            if (this.transform.eulerAngles.y == 0 || this.transform.eulerAngles.y == 180)
+            {
+                moveVertical = Input.GetAxis("Vertical");
+            }
 
-        else
-        {
-            moveVertical = Input.GetAxis("Horizontal");
-        }
+            else
+            {
+                moveVertical = Input.GetAxis("Horizontal");
+            }
 
-        if (this.transform.eulerAngles.y == 0)
-        {
-            movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
-        }
+            if (this.transform.eulerAngles.y == 0)
+            {
+                movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
+            }
 
-        else if (this.transform.eulerAngles.y == 90)
-        {
-            movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
-        }
+            else if (this.transform.eulerAngles.y == 90)
+            {
+                movement = new Vector3(moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
+            }
 
-        else if (this.transform.eulerAngles.y == 270)
-        {
-            movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
-        }
+            else if (this.transform.eulerAngles.y == 270)
+            {
+                movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, moveVertical * (speed + 2.5f));
+            }
 
-        else 
-        {
-            movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
-        }
+            else
+            {
+                movement = new Vector3(-moveHorizontal * (speed + 2.5f), rigidBody.velocity.y, -moveVertical * (speed + 2.5f));
+            }
 
-        rigidBody.velocity = movement;
+            rigidBody.velocity = movement;
+        }
     }
 
+    void Dissolves()
+    {
+        if(this.GetComponent<Renderer>().enabled == true)
+        {
+            if(DissolveWaitTime > 0 )
+            {
+                DissolveWaitTime -= Time.deltaTime;
+                
+            }
+            else{
+
+                if(DissolveTime < 2.2)
+                {
+                    DissolveTime += Time.deltaTime;
+                    dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
+                    this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", DissolveTime / 2);
+                    DissolveOutWaitTime = 2f;
+                    if (DissolveTime >= 2.0f)
+                    {
+                        isDead = false;
+                    }
 
 
-    
+                }
+            }
+        }
+        else
+        {
+            if(DissolveOutWaitTime > 0)
+            {
+                DissolveOutWaitTime -=Time.deltaTime;
+            }
+            else
+            {
+                DissolveTime = 0f;
+                DissolveWaitTime = 1.0f;
+                dissolveMatt.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
+                this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 0);
+            }
+        }
+    }
 
 }

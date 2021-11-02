@@ -15,8 +15,9 @@ public class Explode : MonoBehaviour
         //Main();
     }
 
-    void Main()
+    public void Main()
     {
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         for (int x = 0; x < cubesPerAxis; x++) {
             for (int y = 0; y < cubesPerAxis; y++) {
@@ -29,6 +30,7 @@ public class Explode : MonoBehaviour
         //Destroy(gameObject);
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     void CreateCube(Vector3 coordinates) {
