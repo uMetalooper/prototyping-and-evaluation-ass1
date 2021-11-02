@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask blockMask;
 
     public bool isGrounded;
-    private float jumpForce = -375f;
+    private float jumpForce = -475f;
     private float dist;
     private float groundedTimer = 0;
     private float grabDist = 1.5f;
@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
             //SceneManager.LoadScene(0);
             Scene scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
+            transform.position = new Vector3(-39.5f, 0.5f, -45.1f);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)

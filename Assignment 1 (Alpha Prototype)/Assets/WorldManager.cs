@@ -24,15 +24,15 @@ public class WorldManager : MonoBehaviour
     public Slider Deathscreeen1prog;
     public Slider Deathscreeen2prog;
     float elapsedtime;
-    
+
 
     private static WorldManager managerinst;
 
     void Awake()
     {
-        DontDestroyOnLoad (this);
+        DontDestroyOnLoad(this);
 
-        if(managerinst == null)
+        if (managerinst == null)
         {
             managerinst = this;
         }
@@ -55,7 +55,7 @@ public class WorldManager : MonoBehaviour
     void Update()
     {
 
-        if(inv == null)
+        if (inv == null)
         {
             inv = player.GetComponent<PlayerInv>();
         }
@@ -63,8 +63,8 @@ public class WorldManager : MonoBehaviour
 
         elapsedTimeDisplay.text = Mathf.FloorToInt(elapsedtime / 60).ToString("00") + ":" + Mathf.FloorToInt(elapsedtime % 60).ToString("00");
 
-       // Debug.Log("pos" + Playerpos2);
-       //Debug.Log("active scene" + SceneManager.GetActiveScene().name);
+        // Debug.Log("pos" + Playerpos2);
+        //Debug.Log("active scene" + SceneManager.GetActiveScene().name);
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
@@ -72,32 +72,29 @@ public class WorldManager : MonoBehaviour
         else
         {
 
-            if(player.GetComponent<PlayerController>().health < 1)
+            if (player.GetComponent<PlayerController>().health < 1)
             {
                 //changing = true;
                 if (SceneManager.GetActiveScene().name == "Fire" || SceneManager.GetActiveScene().name == "Alpha_Prototype")
                 {
                     StartCoroutine(World2());
-
-                   
                 }
                 else if (SceneManager.GetActiveScene().name == "Ice")
                 {
                     StartCoroutine(World1());
-
                 }
             }
         }
 
 
-            Playerpos = player.transform;
-            Playerpos2 = player.transform.position;
+        Playerpos = player.transform;
+        Playerpos2 = player.transform.position;
 
-        if(inv.CP1)
+        if (inv.CP1)
         {
             Progress.value = 25f;
         }
-        if(inv.CP1 && inv.CP2)
+        if (inv.CP1 && inv.CP2)
         {
             Progress.value = 50f;
         }
@@ -155,12 +152,5 @@ public class WorldManager : MonoBehaviour
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         //player.GetComponent<PlayerController>().isDead = false;
         StopAllCoroutines(); //can change to timer later if it messes with others
-
-
-
     }
-
-
-
-    //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 }
