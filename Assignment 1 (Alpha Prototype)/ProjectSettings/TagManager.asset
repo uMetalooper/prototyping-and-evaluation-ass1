@@ -13,6 +13,7 @@ TagManager:
   - CK3
   - CK4
   - PickUpB
+  - KillZone
   layers:
   - Default
   - TransparentFX
