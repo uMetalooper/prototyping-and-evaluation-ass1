@@ -8,6 +8,7 @@ public class Explode : MonoBehaviour
     public float delay = 1f;
     public float force = 300f;
     public float radius = 20f;
+    public bool explodecontact = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,7 @@ public class Explode : MonoBehaviour
 
         Rigidbody rb = cube.AddComponent<Rigidbody>();
         rb.AddExplosionForce(force, transform.position, radius);
+        Destroy(cube, 1);
     }
 
     // Update is called once per frame
@@ -53,4 +55,18 @@ public class Explode : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (explodecontact)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                Invoke("Main", 0.5f);
+                Destroy(gameObject, 1);
+                //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
+    }
+
 }
