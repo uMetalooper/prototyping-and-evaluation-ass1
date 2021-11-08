@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 10f;
     public static float distance;
     public bool rotating = false;
+    public Vector3 Playerposition;
 
     public GameObject block;
     //public GameObject camera;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     bool dissolveStart = false;
     public bool isDead = false;
     public bool isGrabbing = false;
+    public bool phase2 = false;
 
     private static PlayerController playerinst;
 
@@ -342,5 +344,42 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "KillZone")
+        {
+            health = -1;
+        }
+
+        if (collision.gameObject.tag == "BadPlatform")
+        {
+            rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+        }
+    }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(isGrounded == true && collision.gameObject.tag == "Riseform")
+        {
+            Playerposition = gameObject.transform.position;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "phase2in")
+        {
+            phase2 = true;
+        }
+
+        if (other.gameObject.tag == "phase2out")
+        {
+            phase2 = false;
+        }
+    }
+
+
 
 }

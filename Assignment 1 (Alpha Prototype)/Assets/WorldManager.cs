@@ -126,7 +126,18 @@ public class WorldManager : MonoBehaviour
         Deathscreeen1.SetActive(false);
         Deathscreeen1prog.value = 0;
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
+        if(player.GetComponent<PlayerController>().phase2 == true)
+        {
+            player.transform.position = new Vector3(player.GetComponent<PlayerController>().Playerposition.x + 200,
+                player.GetComponent<PlayerController>().Playerposition.y + 5,
+                player.GetComponent<PlayerController>().Playerposition.z
+                );
+        }
+        else
+        {
+            player.transform.position = new Vector3(player.transform.position.x + 200, player.transform.position.y + 5, player.transform.position.z);
+        }    
+        
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         //player.GetComponent<PlayerController>().isDead = false;
@@ -151,7 +162,17 @@ public class WorldManager : MonoBehaviour
         Deathscreeen2.SetActive(false);
         Deathscreeen2prog.value = 0;
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z);
+        if (player.GetComponent<PlayerController>().phase2 == true)
+        {
+            player.transform.position = new Vector3(player.GetComponent<PlayerController>().Playerposition.x - 200,
+                player.GetComponent<PlayerController>().Playerposition.y + 5,
+                player.GetComponent<PlayerController>().Playerposition.z
+                );
+        }
+        else
+        {
+            player.transform.position = new Vector3(player.transform.position.x - 200, player.transform.position.y + 5, player.transform.position.z);
+        }
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         //player.GetComponent<PlayerController>().isDead = false;
