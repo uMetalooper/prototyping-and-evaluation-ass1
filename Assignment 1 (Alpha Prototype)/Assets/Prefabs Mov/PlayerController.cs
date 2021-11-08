@@ -45,21 +45,22 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad (this);
+        //DontDestroyOnLoad (this);
 
-        if(playerinst == null)
-        {
-            playerinst = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if(playerinst == null)
+        //{
+        //    playerinst = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         isGrounded = true;
+        this.GetComponent<Renderer>().material.SetFloat("Vector1_2b71c9ec7b1645d8b2d84d91a8412af7", 1);
     }
 
     void Update()

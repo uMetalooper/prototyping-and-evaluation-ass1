@@ -47,7 +47,7 @@ public class Explode : MonoBehaviour
 
         Rigidbody rb = cube.AddComponent<Rigidbody>();
         rb.AddExplosionForce(force, transform.position, radius);
-        Destroy(cube, 1);
+        Destroy(cube, 2.5f);
     }
 
     // Update is called once per frame

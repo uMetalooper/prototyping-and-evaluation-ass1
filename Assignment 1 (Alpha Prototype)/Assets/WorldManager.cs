@@ -25,6 +25,8 @@ public class WorldManager : MonoBehaviour
     public Slider Deathscreeen2prog;
     float elapsedtime;
 
+    public bool fire = true;
+    public bool ice = false;
 
     private static WorldManager managerinst;
 
@@ -75,11 +77,11 @@ public class WorldManager : MonoBehaviour
             if (player.GetComponent<PlayerController>().health < 1)
             {
                 //changing = true;
-                if (SceneManager.GetActiveScene().name == "Fire" || SceneManager.GetActiveScene().name == "Alpha_Prototype")
+                if (fire)
                 {
                     StartCoroutine(World2());
                 }
-                else if (SceneManager.GetActiveScene().name == "Ice")
+                else if (ice)
                 {
                     StartCoroutine(World1());
                 }
@@ -116,10 +118,10 @@ public class WorldManager : MonoBehaviour
         Deathscreeen1.SetActive(true);
         Debug.Log("Has run");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Ice");
-        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
+        //SceneManager.LoadScene("Ice");
+        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
         //DontDestroyOnLoad(Cam);
-        DontDestroyOnLoad(player);
+        //DontDestroyOnLoad(player);
         player.GetComponent<Renderer>().enabled = true;
         Deathscreeen1.SetActive(false);
         Deathscreeen1prog.value = 0;
@@ -128,6 +130,8 @@ public class WorldManager : MonoBehaviour
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         //player.GetComponent<PlayerController>().isDead = false;
+        fire = false;
+        ice = true;
         StopAllCoroutines(); //can change to timer later if it messes with others
 
     }
@@ -139,10 +143,10 @@ public class WorldManager : MonoBehaviour
         Deathscreeen2.SetActive(true);
         Debug.Log("Has run");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Fire");
-        DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
+        //SceneManager.LoadScene("Fire");
+        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
         //DontDestroyOnLoad(Cam);
-        DontDestroyOnLoad(player);
+        //DontDestroyOnLoad(player);
         player.GetComponent<Renderer>().enabled = true;
         Deathscreeen2.SetActive(false);
         Deathscreeen2prog.value = 0;
@@ -151,6 +155,10 @@ public class WorldManager : MonoBehaviour
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         //player.GetComponent<PlayerController>().isDead = false;
+        ice = false;
+        fire = true;
         StopAllCoroutines(); //can change to timer later if it messes with others
     }
+
+
 }
