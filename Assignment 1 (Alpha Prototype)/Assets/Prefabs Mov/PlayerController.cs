@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private RaycastHit hit;
     private Vector3 dir;
     private Vector3 movement;
+    public GameObject GroundCheck;
+    public LayerMask Riseforms;
     
 
     public Slider HealthSlider;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public bool isDead = false;
     public bool isGrabbing = false;
     public bool phase2 = false;
+    public bool grounded = false;
 
     private static PlayerController playerinst;
 
@@ -67,7 +70,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("isDead: " + isDead);
+        grounded = Physics.Raycast(GroundCheck.transform.position, -Vector3.up, 0.2f, Riseforms);
+        Debug.DrawRay(GroundCheck.transform.position, -transform.up * 0.2f, Color.red);
+
+        Debug.Log("PlayerPos " + Playerposition);
         if (dissolveStart)
         {
             Dissolves();
@@ -81,6 +87,8 @@ public class PlayerController : MonoBehaviour
         }
         HealthSlider.value = health;
         HealthSlider.maxValue = 10.0f;
+
+        
 
         if(block == null)
         {
@@ -345,7 +353,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "KillZone")
         {
@@ -359,9 +367,11 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionStay(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
-        if(isGrounded == true && collision.gameObject.tag == "Riseform")
+        Debug.Log("Collision occured");
+        
+        if(grounded == true && collision.gameObject.tag == "RiseForms" && health > 0 && isGrounded)
         {
             Playerposition = gameObject.transform.position;
         }
