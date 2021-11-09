@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Comms : MonoBehaviour
 {
-public GameObject UI;
+    public GameObject UI;
     public GameObject[] objects;
     public bool start;
 
