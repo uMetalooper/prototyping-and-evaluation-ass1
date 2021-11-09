@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerInv : MonoBehaviour
 {
-    bool Inv1;
-    bool Inv2;
+    public bool Inv1;
+    public bool Inv2;
     bool Inv3;
 
 
@@ -37,12 +37,15 @@ public class PlayerInv : MonoBehaviour
         {
             Invslots.enabled = true;
             Destroy(other.gameObject);
+            Inv1 = true;
+            gameObject.GetComponent<PlayerController>().health = -1;
         }
 
         if (other.gameObject.tag == "PickUpB")
         {
             Invslots2.enabled = true;
             Destroy(other.gameObject);
+            Inv2 = true;
         }
 
     }
@@ -52,6 +55,13 @@ public class PlayerInv : MonoBehaviour
         if(other.gameObject.tag == "Goal")
         {
             Invslots.enabled = false;
+            Inv1 = false;
+        }
+
+        if (other.gameObject.tag == "DoorBreaker")
+        {
+            Invslots2.enabled = false;
+            Inv2 = false;
         }
 
 

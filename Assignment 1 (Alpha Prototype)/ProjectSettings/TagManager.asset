@@ -18,6 +18,7 @@ TagManager:
   - RiseForms
   - phase2in
   - phase2out
+  - DoorBreaker
   layers:
   - Default
   - TransparentFX

@@ -366,17 +366,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    public void OnCollisionStay(Collision collision)
-    {
-        Debug.Log("Collision occured");
-        
-        if(grounded == true && collision.gameObject.tag == "RiseForms" && health > 0 && isGrounded)
-        {
-            Playerposition = gameObject.transform.position;
-        }
-    }
-
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "phase2in")
@@ -387,6 +376,11 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "phase2out")
         {
             phase2 = false;
+        }
+
+        if(other.gameObject.tag == "RiseForms" && health > 0)
+        {
+            Playerposition = gameObject.transform.position;
         }
     }
 
