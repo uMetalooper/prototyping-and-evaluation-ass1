@@ -132,13 +132,13 @@ public class WorldManager : MonoBehaviour
         if(player.GetComponent<PlayerController>().phase2 == true)
         {
             player.transform.position = new Vector3(player.GetComponent<PlayerController>().Playerposition.x + 200,
-                player.GetComponent<PlayerController>().Playerposition.y + 5,
+                player.GetComponent<PlayerController>().Playerposition.y + 10,
                 player.GetComponent<PlayerController>().Playerposition.z
                 );
         }
         else
         {
-            player.transform.position = new Vector3(player.transform.position.x + 200, player.transform.position.y + 10, player.transform.position.z);
+            player.transform.position = new Vector3(player.transform.position.x + 200, player.transform.position.y + 5, player.transform.position.z);
         }    
         
         //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

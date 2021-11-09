@@ -218,6 +218,13 @@ public class PlayerController : MonoBehaviour
                 block.GetComponent<Rigidbody>().mass = 1000000;
                 isGrabbing = false;
             }
+
+            if(isDead)
+            {
+                Destroy(block.GetComponent<FixedJoint>());
+                block.GetComponent<Rigidbody>().mass = 1000000;
+                isGrabbing = false;
+            }
         }
     }
 
@@ -381,6 +388,11 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "RiseForms" && health > 0)
         {
             Playerposition = gameObject.transform.position;
+        }
+
+        if (other.gameObject.tag == "KillZone")
+        {
+            health = -1;
         }
     }
 
