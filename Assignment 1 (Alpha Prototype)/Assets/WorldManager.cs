@@ -13,6 +13,7 @@ public class WorldManager : MonoBehaviour
     public GameObject UI;
     public GameObject Deathscreeen1;
     public GameObject Deathscreeen2;
+    public GameObject Winscreen;
 
     PlayerInv inv;
     //public Material dissolveMatt;
@@ -107,6 +108,8 @@ public class WorldManager : MonoBehaviour
         if (inv.CP1 && inv.CP2 && inv.CP3 && inv.CP4)
         {
             Progress.value = 100f;
+            Winscreen.SetActive(true);
+
         }
     }
 
