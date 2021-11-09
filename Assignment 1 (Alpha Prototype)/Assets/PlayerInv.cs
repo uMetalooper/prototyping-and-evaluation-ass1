@@ -19,6 +19,8 @@ public class PlayerInv : MonoBehaviour
     public Image Invslots;
     public Image Invslots2;
 
+    public AudioSource ASPickUpB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class PlayerInv : MonoBehaviour
             Destroy(other.gameObject);
             Inv1 = true;
             gameObject.GetComponent<PlayerController>().health = -1;
+            ASPickUpB.Play();
         }
 
         if (other.gameObject.tag == "PickUpB")
@@ -46,6 +49,8 @@ public class PlayerInv : MonoBehaviour
             Invslots2.enabled = true;
             Destroy(other.gameObject);
             Inv2 = true;
+
+            ASPickUpB.Play();
         }
 
     }

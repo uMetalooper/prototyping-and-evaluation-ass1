@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
 
     private static PlayerController playerinst;
 
+    public AudioSource ASJump;
+    public AudioSource ASDie;
+
     void Awake()
     {
         //DontDestroyOnLoad (this);
@@ -106,7 +109,8 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<Explode>().enabled = true;
             this.GetComponent<Explode>().Invoke("Main", 0);
             
-            
+            //Play death sound
+            ASDie.Play();
         }
 
         dist = 0.5f;
@@ -165,6 +169,9 @@ public class PlayerController : MonoBehaviour
             speed = 3.5f;
             groundedTimer = 0;
             isGrounded = false;
+
+            //Play Jump sound effect
+            ASJump.Play();
         }
 
         distance = transform.localPosition.x;
