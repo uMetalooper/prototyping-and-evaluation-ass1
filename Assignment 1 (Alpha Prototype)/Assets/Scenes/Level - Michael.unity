@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 22444811}
   - component: {fileID: 22444810}
   - component: {fileID: 22444809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flatform (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,8 +225,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22444807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.450546, y: 1.5, z: -36.477036}
-  m_LocalScale: {x: 1.9687496, y: 3, z: 5}
+  m_LocalPosition: {x: 44.28, y: 1.5, z: -36.477036}
+  m_LocalScale: {x: 3.303514, y: 3, z: 5}
   m_Children: []
   m_Father: {fileID: 1680210643}
   m_RootOrder: 3
@@ -955,7 +955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79376356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.672874, y: 3.4099998, z: -41.490685}
+  m_LocalPosition: {x: 28.672874, y: 3.36, z: -41.490685}
   m_LocalScale: {x: 6.3243403, y: 7, z: 8.152751}
   m_Children: []
   m_Father: {fileID: 587989405}
@@ -1329,7 +1329,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &122243231
 Transform:
@@ -1339,11 +1339,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122243229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.15, y: 3.88, z: 40.73}
+  m_LocalPosition: {x: -16.87, y: 4.81, z: 40.73}
   m_LocalScale: {x: 2, y: 4, z: 18}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126193750
 GameObject:
@@ -2212,7 +2212,6 @@ Transform:
   - {fileID: 276432339}
   - {fileID: 905148792}
   - {fileID: 682876522}
-  - {fileID: 694650396}
   - {fileID: 1672186468}
   - {fileID: 1166382570}
   - {fileID: 904742938}
@@ -2762,7 +2761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908060711634964794, guid: a114c743e745d5049b23cea65ce3480c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6908060711634964794, guid: a114c743e745d5049b23cea65ce3480c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3993,8 +3992,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339062318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 193.6952, y: 2, z: -5.8289566}
-  m_LocalScale: {x: 5.8282485, y: 4, z: 19.977669}
+  m_LocalPosition: {x: 191.1628, y: 2, z: -5.8289566}
+  m_LocalScale: {x: 10.892996, y: 4, z: 19.977669}
   m_Children: []
   m_Father: {fileID: 1296787889}
   m_RootOrder: 1
@@ -4213,7 +4212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351745746
 GameObject:
@@ -4345,7 +4344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4499,7 +4498,7 @@ Transform:
   m_LocalScale: {x: 7.9554186, y: 7, z: 0.7353496}
   m_Children: []
   m_Father: {fileID: 223093107}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &365810401
 BoxCollider:
@@ -4782,11 +4781,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2df0e6a4bc0e0664c864a0e68c2682ed, type: 2}
     - target: {fileID: 2368987091643706, guid: cb18e3de5648b7b43a517bd326742e6e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2368987091643706, guid: cb18e3de5648b7b43a517bd326742e6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 235.29
+      value: 234.82
       objectReference: {fileID: 0}
     - target: {fileID: 2368987091643706, guid: cb18e3de5648b7b43a517bd326742e6e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4794,7 +4793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2368987091643706, guid: cb18e3de5648b7b43a517bd326742e6e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40.44
+      value: -42.64
       objectReference: {fileID: 0}
     - target: {fileID: 2368987091643706, guid: cb18e3de5648b7b43a517bd326742e6e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4901,7 +4900,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Looks like the key was a trap, luckily the key was not destroyed and is
-    in your inventory, get it to the end to escape the death cycle.
+    in your inventory, get it to the end to escape the death cycle. You can also
+    use the ice block to get past this lava wall
 --- !u!222 &390581971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5945,7 +5945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342136669101344172, guid: f310535028daf8d4dbe649c0b8499dd5, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8342136669101344172, guid: f310535028daf8d4dbe649c0b8499dd5, type: 3}
       propertyPath: m_LocalScale.x
@@ -7057,7 +7057,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561846395
 GameObject:
@@ -7556,7 +7556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &577668031
 MonoBehaviour:
@@ -7912,8 +7912,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607227135}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 20.193066, y: 3.45, z: -39.99}
-  m_LocalScale: {x: 20, y: 7, z: 8.634034}
+  m_LocalPosition: {x: 20.682, y: 3.35, z: -39.99}
+  m_LocalScale: {x: 20, y: 7, z: 9.611406}
   m_Children: []
   m_Father: {fileID: 587989405}
   m_RootOrder: 1
@@ -8520,8 +8520,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666645961}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 22.554474, y: 11.34, z: -41.63}
-  m_LocalScale: {x: 8.207, y: 7, z: 1}
+  m_LocalPosition: {x: 22.554474, y: 11.34, z: -41.4862}
+  m_LocalScale: {x: 8.207, y: 6.0532584, z: 1}
   m_Children: []
   m_Father: {fileID: 587989405}
   m_RootOrder: 12
@@ -8708,9 +8708,10 @@ GameObject:
   - component: {fileID: 681077451}
   - component: {fileID: 681077450}
   - component: {fileID: 681077449}
+  - component: {fileID: 681077453}
   m_Layer: 0
   m_Name: Flatform
-  m_TagString: Untagged
+  m_TagString: RiseForms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8791,6 +8792,19 @@ Transform:
   m_Father: {fileID: 194423331}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &681077453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681077448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2, z: 0.3}
+  m_Center: {x: 0, y: 1, z: 0.3}
 --- !u!1 &682876521
 GameObject:
   m_ObjectHideFlags: 0
@@ -9056,101 +9070,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683915083}
   m_CullTransparentMesh: 0
---- !u!1 &694650395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 694650396}
-  - component: {fileID: 694650399}
-  - component: {fileID: 694650398}
-  - component: {fileID: 694650397}
-  m_Layer: 0
-  m_Name: Flatform (37)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &694650396
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694650395}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.351961, y: 2.6399999, z: -42.087753}
-  m_LocalScale: {x: 7.709017, y: 5.5, z: 0.7353496}
-  m_Children: []
-  m_Father: {fileID: 223093107}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &694650397
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694650395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &694650398
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694650395}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 9c499f1f265a28748a3f4ccecb05c8c8, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &694650399
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694650395}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &715387684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4678389771028615094, guid: a565c0423f371ff43807942e911cce95, type: 3}
@@ -9620,7 +9539,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Looks like there's an ice block this can be used to chill any passages
-    blocked by fire
+    blocked by fire in the next world
 --- !u!222 &725630837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10930,9 +10849,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Green blocks can be moved, press G to grab them and move them forward or
-    backwords, you can rotate yourself to move them in different directions as well,
-    might be useful to use them to get to the top
+  m_Text: 'Green blocks can be moved, press G to grab them and move them forward
+    or backwords, you can rotate yourself to move them in different directions as
+    well, might be useful to use them to get to the top
+
+
+    (If you have any trouble
+    jumping rotate the player  to disorientate them)'
 --- !u!222 &852462796
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11206,7 +11129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875060171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 277.01, y: 4.26, z: -5.16}
+  m_LocalPosition: {x: 278.84, y: 4.07, z: -4.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1220168094}
@@ -11239,7 +11162,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 6, y: 4, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &876144382
 GameObject:
@@ -11267,7 +11190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876144382}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 25.4, y: 2.2, z: 75.7}
+  m_LocalPosition: {x: 19.37, y: 2.2, z: 75.7}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1220168094}
@@ -11372,9 +11295,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Welldone you made it back to this world and progressed. Looks like standing
-    on the blocks in this world shifts them in the next world use this to jump across
-    the gap
+  m_Text: Welldone you made it back to this world and progressed. Looks like some
+    of the platforms are connected to the ones on the other world standing on one
+    will casue it to sink and make the other platform taller.
 --- !u!222 &877382352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11693,7 +11616,7 @@ Transform:
   m_LocalScale: {x: 7.709017, y: 7, z: 0.7353496}
   m_Children: []
   m_Father: {fileID: 223093107}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &904742939
 BoxCollider:
@@ -11869,7 +11792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342136669101344172, guid: f310535028daf8d4dbe649c0b8499dd5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8342136669101344172, guid: f310535028daf8d4dbe649c0b8499dd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12399,14 +12322,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'To make it to the end you will need to die and be reborn in each world
-    you cannot progress without solving the puzzles and gaining items in each. It
-    looks like the path before was blocked by Lava where as this one isn''t
+  m_Text: 'It looks like the path before was blocked by Lava where as this one isn''t.
+    To make it to the end you will need to be reborn in each world otherwise you
+    cannot progress without solving the puzzles and gaining items.
 
-    How
-    Lucky!!!!
 
-    keep going ahead'
+    How Lucky!!!!
+
+    keep
+    going ahead'
 --- !u!222 &939497501
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12562,7 +12486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950767021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1220168094}
@@ -13467,7 +13391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.570847
+      value: 41.65
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14403,8 +14327,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120040637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 5}
-  m_LocalScale: {x: 20, y: 5, z: 5}
+  m_LocalPosition: {x: -0.2758, y: 2.5, z: 5}
+  m_LocalScale: {x: 19.448, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 598237153}
   m_RootOrder: 1
@@ -15059,7 +14983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165305925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.820541, y: 3.5, z: -36.602043}
+  m_LocalPosition: {x: 31.820541, y: 3.49, z: -36.602043}
   m_LocalScale: {x: 5, y: 7, z: 5}
   m_Children: []
   m_Father: {fileID: 1680210643}
@@ -15253,7 +15177,7 @@ Transform:
   m_LocalScale: {x: 7.2358027, y: 5.5, z: 0.9677751}
   m_Children: []
   m_Father: {fileID: 223093107}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1166382571
 BoxCollider:
@@ -15344,8 +15268,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168612302}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 23.362717, y: 3.5, z: -40.58764}
-  m_LocalScale: {x: 20, y: 7, z: 15.076319}
+  m_LocalPosition: {x: 23.362717, y: 3.4503, z: -40.58764}
+  m_LocalScale: {x: 20, y: 6.9006004, z: 15.076319}
   m_Children: []
   m_Father: {fileID: 1680210643}
   m_RootOrder: 9
@@ -15952,7 +15876,7 @@ Transform:
   - {fileID: 875060172}
   - {fileID: 876144383}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232516022
 GameObject:
@@ -16244,7 +16168,6 @@ GameObject:
   - component: {fileID: 1253348269}
   - component: {fileID: 1253348268}
   - component: {fileID: 1253348267}
-  - component: {fileID: 1253348266}
   - component: {fileID: 1253348270}
   m_Layer: 8
   m_Name: Platform 3 pair 3
@@ -16252,7 +16175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1253348265
 Transform:
   m_ObjectHideFlags: 0
@@ -16261,30 +16184,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253348264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 237.54001, y: -20, z: 86.5}
+  m_LocalPosition: {x: 237.54001, y: -22.85, z: 86.5}
   m_LocalScale: {x: 4, y: 6, z: 4}
   m_Children: []
   m_Father: {fileID: 2052436994}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1253348266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253348264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8625c49b558579e4d8b483548e4c3011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxheight: 2
-  minheight: -2
-  ConnectedBlock: {fileID: 1961111506}
-  timer: 1
-  Player: {fileID: 0}
-  fallspeed: 2.5
 --- !u!65 &1253348267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16317,7 +16222,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b448f0b66ddeb424097cf4c3aede85fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16358,7 +16263,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.1, z: 0.7}
+  m_Size: {x: 0.75, y: 0.2, z: 0.75}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1255637413
 GameObject:
@@ -16672,7 +16577,7 @@ Transform:
   - {fileID: 887111792}
   - {fileID: 339062319}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306209168
 GameObject:
@@ -17420,7 +17325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 5.5104
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalScale.z
@@ -17432,7 +17337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.7552
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17510,8 +17415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: -37.073574}
-  m_SizeDelta: {x: 615, y: 320.3471}
+  m_AnchoredPosition: {x: 1, y: -36.612427}
+  m_SizeDelta: {x: 753.177, y: 389.1098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362067888
 MonoBehaviour:
@@ -17546,13 +17451,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to Death Puzzle the aim of the game is to get to the end and unlock
-    the end gate with the Key. Use WASD or the arrow keys to move, SPACE to jump
-    and Q and E to rotate left and right. The progress bar at the top will tell you
-    how close you are to the end
-
-
-    Enjoy'
+  m_Text: "Welcome to Death Puzzle the aim of the game is to get to the end and unlock
+    the end gate with the Key. \nUse WASD or the arrow keys to move, \nSPACE to jump
+    (hold for better jumps) \nQ and E to rotate left and right and \nG to grab blocks
+    and R to reset the level\nThe progress bar at the top will tell you how close
+    you are to the end (Goodluck!!!!!!!)\n\n(Press C or click the X to close message)"
 --- !u!222 &1362067889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18832,7 +18735,7 @@ Transform:
   m_LocalScale: {x: 2, y: 4, z: 18}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1504243662
 PrefabInstance:
@@ -19518,7 +19421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557413584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.137062, y: 2.42, z: -47.270275}
+  m_LocalPosition: {x: 41.137062, y: 2.42, z: -47.41}
   m_LocalScale: {x: 21.03906, y: 7, z: 4.9148393}
   m_Children: []
   m_Father: {fileID: 587989405}
@@ -20097,7 +20000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607551823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.782562, y: 3.5, z: -47.270275}
+  m_LocalPosition: {x: 39.782562, y: 3.38, z: -47.270275}
   m_LocalScale: {x: 21.03906, y: 7, z: 4.9148397}
   m_Children: []
   m_Father: {fileID: 1680210643}
@@ -20235,8 +20138,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "DEATH HAS FOUND YOU AGAIN, TRANSFERRING YOU TO CRYO IN HOPES OF A BETTER
-    RUN \n!!!!!!!!!!!!!!!!!!!!!!!"
+  m_Text: 'Awww Shucks, looks like your dead, teleporting you to the ice world to
+    bring you back to life, look for a better way out while there
+
+    !!!!!!!!!!!!!!!!!!!!!!!'
 --- !u!222 &1609021960
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20294,7 +20199,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c4d74de321d4446a48a02698f90b4e07, type: 2}
     - target: {fileID: 6103864038489362626, guid: 57ba88b8c1cee764280e6c41af5d7d3e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6103864038489362626, guid: 57ba88b8c1cee764280e6c41af5d7d3e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20306,7 +20211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6103864038489362626, guid: 57ba88b8c1cee764280e6c41af5d7d3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.6
+      value: -42.8
       objectReference: {fileID: 0}
     - target: {fileID: 6103864038489362626, guid: 57ba88b8c1cee764280e6c41af5d7d3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20672,7 +20577,7 @@ Transform:
   - {fileID: 50446809}
   - {fileID: 733919734}
   m_Father: {fileID: 223093107}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661530708
 GameObject:
@@ -20882,6 +20787,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661847441}
   m_CullTransparentMesh: 0
+--- !u!1001 &1662996629
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2964852080887028273, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_Mass
+      value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 232.81009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.355366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028274, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964852080887028286, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
+      propertyPath: m_Name
+      value: Block
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c74e56ac1f986d34783a8d185c73703a, type: 3}
 --- !u!1 &1672186467
 GameObject:
   m_ObjectHideFlags: 0
@@ -20913,7 +20879,7 @@ Transform:
   m_LocalScale: {x: 4.2487216, y: 5.5, z: 0.7353496}
   m_Children: []
   m_Father: {fileID: 223093107}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1672186469
 BoxCollider:
@@ -21105,7 +21071,7 @@ Transform:
   - {fileID: 2124700192}
   - {fileID: 2107287264}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683951334
 GameObject:
@@ -21670,7 +21636,7 @@ Transform:
   - {fileID: 1771431773}
   - {fileID: 1041622600}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757707340
 GameObject:
@@ -23156,7 +23122,6 @@ GameObject:
   - component: {fileID: 1917289611}
   - component: {fileID: 1917289610}
   - component: {fileID: 1917289609}
-  - component: {fileID: 1917289608}
   - component: {fileID: 1917289612}
   m_Layer: 8
   m_Name: Platform 7 pair
@@ -23164,7 +23129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1917289607
 Transform:
   m_ObjectHideFlags: 0
@@ -23173,30 +23138,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917289606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69.6, y: -20, z: 73}
+  m_LocalPosition: {x: 69.6, y: -22.64, z: 73}
   m_LocalScale: {x: 4, y: 6, z: 4}
   m_Children: []
   m_Father: {fileID: 2052436994}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1917289608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917289606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8625c49b558579e4d8b483548e4c3011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxheight: 2
-  minheight: -2
-  ConnectedBlock: {fileID: 651852343}
-  timer: 1
-  Player: {fileID: 0}
-  fallspeed: 2.5
 --- !u!65 &1917289609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23270,7 +23217,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.1, z: 0.7}
+  m_Size: {x: 0.7, y: 0.2, z: 0.7}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1921904695
 PrefabInstance:
@@ -23657,7 +23604,7 @@ Transform:
   - {fileID: 406386905}
   - {fileID: 2066834437}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942377486
 GameObject:
@@ -24967,8 +24914,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "DEATH HAS FOUND YOU AGAIN, TRANSFERRING YOU TO ETHER IN HOPES OF A BETTER
-    RUN \n!!!!!!!!!!!!!!!!!!!!!!!"
+  m_Text: 'Awww Shucks, looks like your dead, teleporting you to the fire world to
+    bring you back to life, look for a better way out while there
+
+    !!!!!!!!!!!!!!!!!!!!!!!'
 --- !u!222 &2032147267
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25116,7 +25065,7 @@ Transform:
   - {fileID: 651852344}
   - {fileID: 809411922}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053484003
 GameObject:
@@ -25524,7 +25473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 3.4556954
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalScale.y
@@ -25536,7 +25485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.51056
+      value: 47.7827
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25544,7 +25493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.767036
+      value: -26.19
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951539, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25577,6 +25526,10 @@ PrefabInstance:
     - target: {fileID: 7617845867511951542, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_Name
       value: Block (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617845867511951542, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7617845867511951543, guid: 8c5df634612e5dc478d9330723acb859, type: 3}
       propertyPath: m_Mass
@@ -25618,7 +25571,7 @@ Transform:
   - {fileID: 761676887}
   - {fileID: 296123619}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2097232386
 MonoBehaviour:

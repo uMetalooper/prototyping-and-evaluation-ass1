@@ -25,7 +25,22 @@ public class Comms : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKey(KeyCode.C))
+        {
+            foreach (GameObject comm in objects)
+            {
+                if (comm != null)
+                {
+                    if (comm.activeSelf)
+                    {
+                        comm.SetActive(false);
+                        Destroy(UI);
+                        enable = true;
+                    }
+                }
+            }
+            
+        }
     }
 
     public void close()
