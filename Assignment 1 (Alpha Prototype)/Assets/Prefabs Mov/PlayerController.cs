@@ -52,11 +52,12 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I) || health < 0)
         {
-            health = 0;
+            
             this.GetComponent<Renderer>().enabled = false;
             this.GetComponent<Explode>().enabled = true;
             this.GetComponent<Explode>().Invoke("Main", 0);
             rigidBody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            health = 0;
         }
 
 
@@ -219,4 +220,22 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = movement;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Killzone")
+        {
+            health = -1;
+            this.GetComponent<Explode>().Invoke("Main", 0);
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Key")
+        {
+            health = -1;
+            this.GetComponent<Explode>().Invoke("Main", 0);
+        }
+    }
 }

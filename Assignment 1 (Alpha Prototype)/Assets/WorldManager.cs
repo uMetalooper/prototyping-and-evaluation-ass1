@@ -35,8 +35,14 @@ public class WorldManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(inv == null)
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene("Fire");
+            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("WorldManager"));
+            DontDestroyOnLoad(Cam);
+            DontDestroyOnLoad(player);
+        }
+        if (inv == null)
         {
             inv = player.GetComponent<PlayerInv>();
         }
